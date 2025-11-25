@@ -2,6 +2,7 @@ package me.luucx7;
 
 import lombok.Getter;
 import me.luucx7.listeners.PlayerJoinListener;
+import me.luucx7.listeners.PlayerRespawnListener;
 import me.luucx7.luckperms.LuckPermsPermissionListener;
 import net.luckperms.api.LuckPermsProvider;
 import org.bukkit.Bukkit;
@@ -21,6 +22,7 @@ public class MaxHealthPlugin extends JavaPlugin {
         saveDefaultConfig();
 
         Bukkit.getPluginManager().registerEvents(new PlayerJoinListener(), this);
+        Bukkit.getPluginManager().registerEvents(new PlayerRespawnListener(), this);
 
         new LuckPermsPermissionListener(this, LuckPermsProvider.get());
     }
